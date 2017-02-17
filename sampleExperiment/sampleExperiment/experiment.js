@@ -20,38 +20,15 @@ var helpContent;
 function initialiseHelp()
 {
     helpContent="";
-    helpContent = helpContent + "<h2>Bouncing Ball experiment help</h2>";
+    helpContent = helpContent + "<h2>Shadows experiment help</h2>";
     helpContent = helpContent + "<h3>About the experiment</h3>";
-    helpContent = helpContent + "<p>The experiment shws a bouncing ball constrained by left, right, top and bottom walls.</p>";
-    helpContent = helpContent + "<h3>Animation control</h3>";
-    helpContent = helpContent + "<p>The top line has animation controls. There are two states of the experiment.</p>";
-    helpContent = helpContent + "<h3>The setup stage</h3>";
-    helpContent = helpContent + "<p>The initial state is setup stage. In this stage, you can see a control window at the right. You have access to five sliders.</p>";
-    helpContent = helpContent + "<p>You can control the following:</p>";
-    helpContent = helpContent + "<ul>";
-    helpContent = helpContent + "<li>X&nbsp;&nbsp;:&nbsp;Controls the X position of the ball.</li>";
-    helpContent = helpContent + "<li>Y&nbsp;&nbsp;:&nbsp;Controls the Y position of the ball.</li>";
-    helpContent = helpContent + "<li>VX&nbsp;:&nbsp;Controls the X velocity of the ball.</li>";
-    helpContent = helpContent + "<li>VY&nbsp;:&nbsp;Controls the Y velocity of the ball.</li>";
-    helpContent = helpContent + "<li>AY&nbsp;:&nbsp;Controls the Y acceleration of the ball.</li>";
-    helpContent = helpContent + "</ul>";
-    helpContent = helpContent + "<p>You also have an additional text input to control the coefficient of restitution of the bottom floor.</p>";
-    helpContent = helpContent + "<p>Once you setup the experiment, you can enter the animation stage by clicking the start button</p>";
-    helpContent = helpContent + "<h3>The animation stage</h3>";
-    helpContent = helpContent + "<p>In the animation stage, the ball will bounce around obeyng the laws of physics.</p>";
-    helpContent = helpContent + "<p>The right hand panel now shows the values of the four experiment variables during animation.</p>";
-    helpContent = helpContent + "<ul>";
-    helpContent = helpContent + "<li>X&nbsp;&nbsp;:&nbsp;Shows the X position of the ball.</li>";
-    helpContent = helpContent + "<li>Y&nbsp;&nbsp;:&nbsp;Shows the Y position of the ball.</li>";
-    helpContent = helpContent + "<li>VX&nbsp;:&nbsp;Shows the X velocity of the ball.</li>";
-    helpContent = helpContent + "<li>VY&nbsp;:&nbsp;Shows the Y velocity of the ball.</li>";
-    helpContent = helpContent + "</ul>";
-    helpContent = helpContent + "<p>In addition you will also see two sliders showing potential and kinetic energy.</p>";
-    helpContent = helpContent + "<p>You can pause and resume the animation by using the pause/play nutton on the top line</p>";
-    helpContent = helpContent + "<p>You can slow down and speed up the animaion by uing the speed control buttons</p>";
+    helpContent = helpContent + "<p>The experiment shows shadows of various objects based on their position with respect to light source and their property.</p>";
+    helpContent = helpContent + "<h3>Controls</h3>";
+    helpContent = helpContent + "<p>In the bottom of experiment there are names of 4 different objects. On clicking any of them, that object would be placed in between light source and screen. Do not press STOP button during experiment.</p>";
+    helpContent = helpContent + "<h3>Learning Section</h3>";
+    helpContent = helpContent + "<p>In the bottom right corner of experiment there is button written \"Play a Quiz\", on clicking that experiment would lead to learning section. In the learning section shadows would be randomly shown to user. User has to identify the shadow from given options. If correct object is identified it would be displayed as correct answer. </p>";
     helpContent = helpContent + "<h3>The drag and drop</h3>";
-    helpContent = helpContent + "<p>You can also position the ball by dragging and dropping it. You can only do this in the setup stage. This has been prevented in the animation stage.</p>";
-    helpContent = helpContent + "<h2>Happy Experimenting</h2>";
+    helpContent = helpContent + "<p>You can also position some objects during experiment</p>";
     PIEupdateHelp(helpContent);
 }
 
@@ -59,24 +36,13 @@ var infoContent;
 function initialiseInfo()
 {
     infoContent =  "";
-    infoContent = infoContent + "<h2>Bouncing Ball experiment concepts</h2>";
-    infoContent = infoContent + "<h3>About the experiment</h3>";
-    infoContent = infoContent + "<p>The experiment shws a bouncing ball constrained by left, right, top and bottom walls.</p>";
-    infoContent = infoContent + "<h3>Collision</h3>";
-    infoContent = infoContent + "<p>When an object collides with a surface, the direction of velocity normal to the surface is reversed.</p>";
-    infoContent = infoContent + "<p>At the time of impact, the ball is deformed because of the force of the wall. This deformation can be easily observed with a sponge ball. If you drop a ball of dough on the floor, it does not bounce, it is only deformed.</p>";
-    infoContent = infoContent + "<p>The harder balls are also deformed. But because of the hard nature of the meterial, the hard ball tries to regain it's shape. This attempt to reain the shape reverses the velocity by pushing aainst the wall.</p>";
-    infoContent = infoContent + "<p>When the ball collides with the left or the right wall, the velocity in the X direction reverses while the velocity in the Y direction reamains the same.</p>";
-    infoContent = infoContent + "<p>When the ball collides with the top or the bottom wall, the velocity in the Y direction reverses while the velocity in the Y direction reamains the same.</p>";
-    infoContent = infoContent + "<h3>The coefficient of restitution</h3>";
-    infoContent = infoContent + "<p>When the velocity reverses direction, it is not necessary that it's magnitude remains the same.</p>";
-    infoContent = infoContent + "<p>The ball may not retain it's original shape and texture. The cricket ball loses it's shine.</p>";
-    infoContent = infoContent + "<p>Some of the energy is lost because of the deformation of the ball. The energy loss means that the kinetic energy of the ball will be reduced after impact.</p>";
-    infoContent = infoContent + "<p>The coefficient of restitution specifies how much of the velocity will be retained after impact.</p>";
-    infoContent = infoContent + "<p>The coefficient of restitution does not affect te velocity in the direction parallel to the impact.</p>";
-    infoContent = infoContent + "<p>When the ball collides with the left or the right wall, the magnitude of the velocity in the X direction will reduce as per the coefficient of restitution. The magnitude and sign in Y direction remains the same.</p>";
-    infoContent = infoContent + "<p>When the ball collides with the top or the bottom wall, the magnitude of the velocity in the Y direction will reduce as per the coefficient of restitution. The magnitude and sign in X direction remains the same.</p>";
-    infoContent = infoContent + "<h2>Happy Experimenting</h2>";
+    infoContent = infoContent + "<h2>Description</h2>";
+    infoContent = infoContent + "<p>Show various ordinary household objects. Show a glowing light source (bulb) and a screen. Allow student to select and bring object in between light source and screen. Show, the shadow completely based on the object property.</p>";
+    infoContent = infoContent + "<h3>Observation</h3>";
+    infoContent = infoContent + "<p>List of house hold objects, their property and their shadow (clear, dim, no shadow).</p>";
+    infoContent = infoContent + "<h3>Learning</h3>";
+    infoContent = infoContent + "<p>Show shadows at random and ask student to specify possible objects. Show experiment and state whether answer is correct or wrong.</p>";
+
     PIEupdateInfo(infoContent);
 }
 
@@ -132,7 +98,7 @@ var myPrettyCode = function() {
     PIEdragElement(ball);
     PIEdragElement(teapot);
     // PIEdragElement(eye_glasses);
-    $('body').append('<div class="lower_panel" style="padding: 0 10px 10px;"><h2 class="title" style="color: #5bc0de;margin-top: 0;">Choose an object to show its shadow</h2><div class="objects_list" style="width: 50%;    float: left;"><button class="btn" id="ball">Ball</button>        <button id="cube" class="btn">Cube</button>        <button class="btn" id="teapot">Teapot</button>        <button class="btn" id="eye_glasses">Spectacles</button>    </div>    <div class="side_buttons" style="margin-right: 30px;    float: right;">    <button class="quiz btn-default btn btn-primary btn-lg ">Play a Quiz</button>        <button class="btn-default btn btn-primary btn-lg " id="home" style="display: none">Home</button>    </div>    <div class="quiz_options" style="display: none;width: 50%;float: left;color: #1ed36f;font-size: large;">Options        <button id="1" class="options btn"><img height="50px"></button>        <button id="2" class="options btn"><img height="50px"></button>        <button id="3" class="options btn"><img height="50px"></button>        <button id="4" class="options btn"><img height="50px"></button>        <div id="text" style="display: inline-flex;margin-left: 20px;"></div>    </div></div>')
+    $('body').append('<div class="lower_panel" style="padding: 0 10px 10px;"><h2 class="title" style="color: #5bc0de;margin-top: 0;">Choose an object to show its shadow</h2><div class="objects_list" style="width: 50%;    float: left;"><button class="btn" id="ball">Ball</button>        <button id="cube" class="btn">Cube</button>        <button class="btn" id="teapot">Teapot</button>        <button class="btn" id="eye_glasses">Spectacles</button>    </div>    <div class="side_buttons" style="margin-right: 30px;    float: right;">    <button class="quiz btn-default btn btn-primary btn-lg ">Play a Quiz</button>        <button class="btn-default btn btn-primary btn-lg " id="home" style="display: none">Home</button>    </div>    <div class="quiz_options" style="display: none;width: 50%;float: left;color: #1ed36f;font-size: large;">Options        <button id="1" class="options btn"><img height="50px"></button>        <button id="2" class="options btn"><img height="50px"></button>        <button id="3" class="options btn"><img height="50px"></button>        <button id="4" class="options btn"><img height="50px"></button>        <div id="text" style="display: inline-flex;margin-left: 20px; font-size: x-large;"></div>    </div></div>')
     $('#teapot').click(function () {
         // camera.position.z = 10;
         light.position.z = light_position_z;
@@ -216,7 +182,7 @@ var myPrettyCode = function() {
             }
         }
         if (object != null) {
-            PIEscene.remove(object)
+            PIEscene.remove(object);
         }
         object = all_objects[index];
         object.position.set(object_position_x, object_position_y, 16);
@@ -224,6 +190,13 @@ var myPrettyCode = function() {
 
     });
     $('.options').click(function () {
+        PIEscene.remove(bulb);
+        bulb.position.z=light_position_z;
+        PIEaddElement(bulb);
+        light.position.z=light_position_z;
+        PIEscene.remove(object);
+        object.position.z=object_position_z;
+        PIEaddElement(object);
         var option = $(this).attr('id');
         var option_int = parseInt(option);
         if (option_int == option_index) {
@@ -235,7 +208,7 @@ var myPrettyCode = function() {
     $('#home').click(function () {
         window.location.reload();
     });
-    $('start').click();
+    $('#start').click();
 
 };
 
