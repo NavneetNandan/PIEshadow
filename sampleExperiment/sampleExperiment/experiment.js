@@ -227,10 +227,8 @@ var myPrettyCode = function() {
         var option = $(this).attr('id');
         var option_int = parseInt(option);
         if (option_int == option_index) {
-            console.log("right");
             $('#text').text("Your answer is correct")
         } else {
-            console.log("wrong");
             $('#text').text("Your answer is wrong")
         }
     });
