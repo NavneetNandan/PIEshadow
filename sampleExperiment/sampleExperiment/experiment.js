@@ -245,7 +245,7 @@ function loadExperimentElements()
     PIErenderer.setSize(window.innerWidth, 0.8*window.innerHeight);
     loadScript("jquery-3.1.1.min.js", myPrettyCode);
     loader = new THREE.ObjectLoader();
-    PIEsetExperimentTitle("Shadows");
+    PIEsetExperimentTitle("6.11.2A Shadows (activity 2)");
     PIEsetDeveloperName("Navneet Nandan");
     PIEhideControlElement();
     initialiseHelp();
