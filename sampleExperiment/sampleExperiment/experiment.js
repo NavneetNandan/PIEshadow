@@ -282,8 +282,6 @@ function loadExperimentElements()
     PIEcamera.position.x = -3;
     PIEcamera.position.y = 0;
     PIEcamera.position.z = 15;
-    // initialiseScene();
-    // initialiseOtherVariables();
     screen = create_screen();
     PIEaddElement(screen);
 }
