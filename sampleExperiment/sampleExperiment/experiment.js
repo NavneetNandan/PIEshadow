@@ -1,10 +1,5 @@
 /* Global Variables */
-/* the developer should define variables and constants here */
-/* We define a room with 3 walls, floor and ceiling */
-/* We define a ball which bounces in the xy plane */
-/* We define modifiable prameters : gravity, ball size, initial velocity */
-/* We support draggable ball */
-/* Scene Dimensions (in meters: at z = 0) */
+
 
 object_position_x = 0;
 object_position_y = 0;
@@ -20,51 +15,6 @@ var object;
 light_position_x = 0;
 light_position_y = 0.1;
 light_position_z = 8;
-
-/******************* Interaction functions ***********************/
-
-/**
- * This function implements custom dragging of the ball.
- * <p>
- * It ensures that the ball is not dragged beyond the permissible boundaries.
- * In other applications you can move more than one element as well.
- * <p>
- * @param element    Pointer to ball object
- * @param newpos     New 3D position (THREE.Vector3)
- */
-function myBallDrag(element, newpos)
-{
-    myBallX = newpos.x;
-    if (newpos.x < (leftB + myBallRadius)) { myBallX = (leftB + myBallRadius) }
-    else if (newpos.x > (rightB - myBallRadius)) { myBallX = (rightB - myBallRadius) }
-    myBallY = newpos.y;
-    if (newpos.y < (bottomB + myBallRadius)) { myBallY = (bottomB + myBallRadius); }
-    else if (newpos.y > (topB - myBallRadius)) { myBallY = (topB  - myBallRadius); }
-    myBallZ = newpos.z;
-
-    myBall.position.set(myBallX, myBallY, myBallZ);
-}
-
-/******************* End of Interaction functions ***********************/
-
-/******************* GUI control objects code ***********************/
-
-
-/*
- * This function handles the Y acceleration (gravity) slider change
- * <p>
- * Updates the myBall acceleration variable.
- * Effect is felt from the next animation frame.
- * <p>
- * @param newValue       New Value of the slider
- */
-
-
-
-
-/******************* End of GUI control objects code ***********************/
-
-/******************* Load Experiment objects code ***********************/
 
 var helpContent;
 function initialiseHelp()
@@ -130,36 +80,6 @@ function initialiseInfo()
     PIEupdateInfo(infoContent);
 }
 
-function initialiseScene()
-{
-    /* Initialise Scene Variables */
-    mySceneTLX = 0.0;
-    mySceneTLY = 3.0;
-    mySceneBRX = 4.0;
-    mySceneBRY = 0.0;
-    mySceneW   = (mySceneBRX - mySceneTLX);
-    mySceneH   = (mySceneTLY - mySceneBRY);
-    myCenterX  = (mySceneTLX + mySceneBRX) / 2.0;
-    myCenterY  = (mySceneTLY + mySceneBRY) / 2.0;
-    myBallZ    = -2.0;
-}
-
-function initialiseOtherVariables()
-{
-    // /* Initialise variables */
-    myBallRadius = mySceneW/30.0;
-    // wallThickness = 0.20;
-    //
-    // /* Gravity */
-    // gravityX = 0.0;
-    // gravityY = -9.8;
-    //
-    // /* Barriers */
-    // leftB=mySceneTLX;
-    // rightB=mySceneBRX;
-    // bottomB=mySceneBRY;
-    // topB=mySceneTLY;
-}
 
 function getRandomInt(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
@@ -191,44 +111,6 @@ function create_screen() {
     return myBack;
 }
 
-
-/**
- * This function creates the scene of the experiment.
- * It is called by the library during document load. 
- * It is recommended that you do not initialise any variables globally.
- * It is recommended that this function create all the elements first.
- * It should then call a reset function to initialise values.
- * This will allow a reset exepriment functionality to be implemented.
- * <p>
- * It is recommended that the developer first draw a sketch of the experiment on a piece of paper.
- * The sketch should specify the size and initial position of all the elements that comprise the experiment.
- * <p>
- * Once the sketch is ready, the developer should instantiate the elements at the intial location.
- * <p>
- * The (x,y) position of the camera would be set to the center of area of interest.
- * The z position of the camera would be such that the field of vision would cover the height.
- * The aspect ratio of the camera whould cover the width.
- * <p>
- * Two lights would be suitably positioned to light the area of interest.
- * <p>
- * The developer can position the camera and lights if he so chooses.
- * <p>
- * The camera would adjust and cover a wider and taller area depending on the dimensions of the display.
- * hence the background (if any) shoudl extend beyond the area of interest.
- * <p>
- * Finally the developer should call the function PIEsetAreaOfInterest(tlx, tly, brx, bry).
- * The parameters are the top left corner and bottom right corner coordinates.
- * The X axis goes from lef to right of te display and the y axis goes from bottom to up.
- * The area of interst should be wide and tall enough to cover all potential movements.
- * <p>
- * The developer should have a fairly good idea of the controls forthe experiment.
- * Once the scene is setup and is visible, the developer can include the controls and
- * the callback functions needed to update the experiment parameters.
- * The PIE library provides a set of functions to implement common controls.
- * <p>
- * The developer should code and assign proper event handlers to the elements (to control animation).
- */
-
 function loadScript(url, callback)
 {
     // Adding the script tag to the head as suggested before
@@ -244,6 +126,7 @@ function loadScript(url, callback)
     // Fire the loading
     head.appendChild(script);
 }
+
 
 var myPrettyCode = function() {
     PIEdragElement(ball);
@@ -305,15 +188,10 @@ var myPrettyCode = function() {
         return false;
     }
     $('.quiz').click(function () {
-
-        // PIEaddElement(object);
         PIEscene.remove(bulb);
         bulb.position.z=30;
         PIEaddElement(bulb);
         light.position.z=30;
-        console.log("A");
-        // controls.reset();
-        // controls.dispose();
         $('#text').text("");
         $('.objects_list').hide();
         $('.quiz').text("Play New Quiz");
@@ -337,9 +215,6 @@ var myPrettyCode = function() {
                 $('#' + i.toString()).children('img').attr('src', all_objects_image[image_index]);
             }
         }
-        // camera.position.z = 4.5;
-        // light.position.z = 10;
-        // bulb.position.z = 10;
         if (object != null) {
             PIEscene.remove(object)
         }
@@ -365,6 +240,8 @@ var myPrettyCode = function() {
     $('start').click();
 
 };
+
+
 function loadExperimentElements()
 {
     PIErenderer.setSize(window.innerWidth, 0.8*window.innerHeight);
@@ -399,106 +276,25 @@ function loadExperimentElements()
 
     });
 
-    /* initialise help and info content */
-
-    /* initialise Scene */
     light = new THREE.PointLight(0xffffff, 1, 0, 0);
     light.position.set(light_position_x, light_position_y, light_position_z);
     light.castShadow = true;
     light.shadowCameraVisible = true;
     PIEscene.add(light);
-    // myBall.position.set(object_position_x,object_position_y,object_position_z);
-
     PIEcamera.position.x = -3;
     PIEcamera.position.y = 0;
     PIEcamera.position.z = 15;
-
-    initialiseScene();
-
-    /* initialise Other Variables */
-
-    initialiseOtherVariables();
-    // PIEaddElement(cube);
-    // ball = create_ball();
+    // initialiseScene();
+    // initialiseOtherVariables();
     screen = create_screen();
-
     PIEaddElement(screen);
-    /* Create Ball and add it to scene */
-    // myBall = new THREE.Mesh(new THREE.SphereGeometry(myBallRadius, 32, 32), new THREE.MeshLambertMaterial({color:0xededed}));
-    // myBall.position.set(object_position_x, object_position_y, object_position_z);
-    // myBall.castShadow = true;
-    // myBall.receiveShadow = true;
-    // PIEaddElement(myBall);
-    // /* Allow Dragging of the ball */
-    // PIEsetDrag(myBall, myBallDrag);
-    // // document.getElementById('teapot').onclick=addcube();
-    /* Initialise Wall variables */
-    /* All walls extend beynd the room size in both directions */
-    // /* Floor */
-    // loader = new THREE.TextureLoader();
-    // texture = loader.load( '../PIE/images/hardwood2_diffuse.jpg' );
-    // texture.wrapS = texture.wrapT = THREE.RepeatWrapping;
-    // texture.repeat.set( 25, 25 );
-    // texture.anisotropy = 16;
-    // material = new THREE.MeshPhongMaterial( { color: 0xffffff, specular: 0x111111, map: texture } );
-    // // geometry = new THREE.PlaneBufferGeometry( mySceneW * 2, backB * 2 );
-    // PIEaddElement(myBack);
-    // document.getElementById('Cube').onclick=addcube;
-    // $('#Cube').attr('onClick',addcube())
-    /* Instantiate experiment controls */
-    // initialiseControls();
-
-    /* Reset all positions */
-    // resetExperiment();
-
-    // PIEsetAreaOfInterest(mySceneTLX, mySceneTLY, mySceneBRX, mySceneBRY);
 }
 
-/******************* End of Load Experiment objects code ***********************/
-
-/******************* Reset Experiment code ***********************/
-
-/**
- * This function resets the position of all experiment elements to their default values.
- * <p>
- * This is called during initial document load.
- * This is also be called by the system provided reset button.
- * <p>
- * Apart from the position, this should also reset all variables which can be controlled by the user.
- * This function will also clear any output variables/graphs
- */
-
-/******************* End of Reset Experiment code ***********************/
-
-/******************* Update (animation changes) code ***********************/
-
-/**
- * This function updates the location of all experiment elements during each animation frame.
- * <p>
- * The function receives both animation time as well as the dt (time difference) from last call.
- * This function is expected to implement the laws of physics to update the position.
- * This function will also update any output variables/graphs
- * <p>
- * Important Note : Boundary Events
- * <p>
- * During any physics simulation you will reach a boundary event.
- * In our case, the boundary even is the ball hitting any of the walls.
- * The boundary event typically changes the sign of velocity/acceleration.
- * The boundary event is most likely to happen in the middle of the two calls.
- * The library allows the experiment to change the simulation time by processing partial time.
- * This function can call a library function with the time remaining to be processed before exiting.
- * <p>
- * @param  t       The time in milliseconds elapsed since the beginning of animation cycle
- * @param  dt      The time in milliseconds elapsed since the last acll to this function
- */
 function updateExperimentElements(t, dt)
 {
     PIEscene.remove(PIEspotLight);
-    // bulb.position.set(light_position_x, light_position_y-1, light_position_z);
 }
 
-
-/******************* Update (animation changes) code ***********************/
 
 
 
