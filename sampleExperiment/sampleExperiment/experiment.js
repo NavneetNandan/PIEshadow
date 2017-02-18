@@ -224,21 +224,21 @@ function loadExperimentElements()
     initialiseHelp();
     initialiseInfo();
     ball = create_ball();
-    loader.load("rubiks-cube.json",function (obj) {
+    loader.load("https://raw.githubusercontent.com/NavneetNandan/PIEshadow/master/sampleExperiment/sampleExperiment/rubiks-cube.json?token=AKRkIv1xy4V3T-N784hWJLAY5B86iYnBks5YsQ2wwA%3D%3D",function (obj) {
        cube = obj;
        cube.scale.x = 0.1;
        cube.scale.y = 0.1;
        cube.scale.z = 0.1;
     });
-    loader.load("teapot-claraio.json", function (obj) {
+    loader.load("https://raw.githubusercontent.com/NavneetNandan/PIEshadow/master/sampleExperiment/sampleExperiment/teapot-claraio.json", function (obj) {
         teapot = obj;
     });
-    loader.load("lamp.json", function (obj) {
+    loader.load("https://raw.githubusercontent.com/NavneetNandan/PIEshadow/master/sampleExperiment/sampleExperiment/lamp.json", function (obj) {
         bulb = obj;
         bulb.position.set(light_position_x, light_position_y - 0.5, light_position_z);
         PIEaddElement(bulb)
     });
-    loader.load("glasses1.json", function (obj) {
+    loader.load("https://raw.githubusercontent.com/NavneetNandan/PIEshadow/master/sampleExperiment/sampleExperiment/glasses1.json", function (obj) {
         eye_glasses = obj;
         eye_glasses.scale.x = 0.04;
         eye_glasses.scale.y = 0.04;
