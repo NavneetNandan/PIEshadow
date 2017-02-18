@@ -361,7 +361,7 @@ function loadExperiment() {
 function PIEaddSystemButtons() {
     PIEresetButton = PIEaddButton("reset");
     PIEresetButton.style = "background: none; border: none; box-sizing:border-box;";
-    PIEresetButton.innerHTML = '<img src="../PIE/images/ButtonRound.png" alt="reset" style="height: inherit; width: 70%;">';
+    PIEresetButton.innerHTML = '<img src="PIE/images/ButtonRound.png" alt="reset" style="height: inherit; width: 70%;">';
     PIEresetButton.style.display = "inline";
     PIEresetButton.addEventListener("click", PIEresetExperiment);
     PIEstartButton = PIEaddButton("start");
@@ -372,13 +372,13 @@ function PIEaddSystemButtons() {
     PIEstopButton.addEventListener("click", PIEstopAnimation);
     PIEpauseButton = PIEaddButton("pause");
     PIEpauseButton.style = "background: none; border: none; box-sizing:border-box;";
-    PIEpauseButton.innerHTML = '<img src="../PIE/images/ButtonPause.png" alt="pause" style="height: inherit; width: 70%;">';
+    PIEpauseButton.innerHTML = '<img src="PIE/images/ButtonPause.png" alt="pause" style="height: inherit; width: 70%;">';
     PIEpauseButton.style.display = "inline";
     PIEpauseButton.style.visibility = "hidden";
     PIEpauseButton.addEventListener("click", PIEpauseAnimation);
     PIEresumeButton = PIEaddButton("resume");
     PIEresumeButton.style = "background: none; border: none; box-sizing:border-box;";
-    PIEresumeButton.innerHTML = '<img src="../PIE/images/ButtonPlay.png" alt="resume" style="height: inherit; width: 70%;">';
+    PIEresumeButton.innerHTML = '<img src="PIE/images/ButtonPlay.png" alt="resume" style="height: inherit; width: 70%;">';
     PIEresumeButton.style.display = "none";
     PIEresumeButton.style.visibility = "hidden";
     PIEresumeButton.addEventListener("click", PIEresumeAnimation);
@@ -391,11 +391,11 @@ function PIEaddSystemButtons() {
     PIEspeedupButton.addEventListener("click", PIEspeedupAnimation);
     PIEinfoButton = PIEaddButton("info");
     PIEinfoButton.style = "background: none; border: none; box-sizing:border-box;";
-    PIEinfoButton.innerHTML = '<img src="../PIE/images/ButtonInfo.png" alt="info" style="height: inherit; width: 70%;">';
+    PIEinfoButton.innerHTML = '<img src="PIE/images/ButtonInfo.png" alt="info" style="height: inherit; width: 70%;">';
     PIEinfoButton.addEventListener("click", PIEshowInfo);
     PIEhelpButton = PIEaddButton("help");
     PIEhelpButton.style = "background: none; border: none; box-sizing:border-box;";
-    PIEhelpButton.innerHTML = '<img src="../PIE/images/ButtonHelp.png" alt="help" style="height: inherit; width: 70%;">';
+    PIEhelpButton.innerHTML = '<img src="PIE/images/ButtonHelp.png" alt="help" style="height: inherit; width: 70%;">';
     PIEhelpButton.addEventListener("click", PIEshowHelp)
 }
 function PIEaddModalWindows() {
